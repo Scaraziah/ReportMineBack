@@ -14,3 +14,7 @@ const bitlockerSchema = new mongoose.Schema({
     recKey: { String, required: true },
     dateModified: { type: Date, default: Date.now },
 })
+
+const Bitlocker = mongoose.model('Bitlocker',  bitlockerSchema);
+
+module.exports = Bitlocker;
