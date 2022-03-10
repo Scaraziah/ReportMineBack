@@ -30,5 +30,13 @@ router.post('/', async (req, res) => {
        }
 });
 
+router.get('/', async (req, res) => {
+    try{
+        const bitlockers = await Bitlocker.find();
+        return res.send(bitlockers);
+    } catch (ex) {
+        return res.status(500).send(`Internal Server error: ${ex}`);
+    }
+});
 
 module.exports = router;
